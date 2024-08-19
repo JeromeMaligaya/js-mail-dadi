@@ -47,7 +47,7 @@ console.table(emailDataBase);
 const emailField = document.getElementById('email');
 console.log('id email', emailField);
 
-
+let messageResult = document.getElementById('message');
 
 const button = document.querySelector('button');
 console.log(button);
@@ -72,11 +72,15 @@ button.addEventListener('click', function() {
     console.log(isValidMail)
 
     if (isValidMail) {
-        messageValid = `Il seguente indirizzo mail: ${userEmail}, non può essere utilizzato, poichè già esistente.`;
+        messageValid = `Il seguente indirizzo mail: <span class='text-danger'><strong>${userEmail}</strong></span>, non può essere utilizzato, poichè già esistente.`;
+       
     } else{
-        messageValid = `Il seguente indirizzo mail: ${userEmail}, può essere utilizzato.`;
+        messageValid = `Il seguente indirizzo mail: <span class='text-success'><strong>${userEmail}</strong></span>, può essere utilizzato.`;
     }
     
     console.log(messageValid)
+
+    // generazione otput
+    messageResult.innerHTML = messageValid;
    
 })
