@@ -3,7 +3,7 @@ console.log('JS OK')
 
 // 1.recupero l'elemento dal dom
 const target = document.getElementById('target');
-console.log('id', target)
+console.log('id gioco dei dadi', target)
 
 // 2.raccolta dati
 const max = 6;
@@ -28,3 +28,23 @@ console.log(message)
 
 // 4.generazione output
 target.innerHTML = message;
+
+
+
+// -------------------
+
+
+
+// esercizio mail
+// 1.recupero l'elemento dal dom
+const target2 = document.getElementById('target2');
+console.log('id mail', target2)
+
+// 2.raccolta dati
+const emailDataBase = ['jeromemaligaya@gmail.com', 'melvinjerome@gmail.com', 'jeromeluna@gmail.com', 'melvinluna@gmail.com', 'lunamaligaya@gmail.com'];
+console.table(emailDataBase)
+
+const emailField = document.getElementById('email')
+console.log('id email', emailField)
+const userEmail = emailField.value.trim();
+console.log('value email', userEmail)
