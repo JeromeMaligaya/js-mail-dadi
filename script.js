@@ -46,8 +46,7 @@ console.table(emailDataBase);
 
 const emailField = document.getElementById('email');
 console.log('id email', emailField);
-const userEmail = emailField.value.trim();
-console.log('value email', userEmail);
+
 
 
 const button = document.querySelector('button');
@@ -55,19 +54,29 @@ console.log(button);
 
 // 3.lavorazione dati
 button.addEventListener('click', function() {
-    let isValidMail = '';
+    let isValidMail = false;
 
+    let messageValid = '';
+
+    const userEmail = emailField.value.trim();
     console.log('value email', userEmail);
 
     for (let i = 0; i < emailDataBase.length; i++){
         email = emailDataBase[i];
-        console.log(email)
-        if (userEmail !== email){
-            isValidMail = `Il seguente indirizzo mail: ${userEmail}, può essere utilizzato.`
-        } else if (userEmail === email) {
-            isValidMail = `Il seguente indirizzo mail: ${userEmail}, non può essere utilizzato, poichè già esistente.`
-        }
+        // verifico se la mail è presente nell'array
+        if (userEmail === email){
+            isValidMail = true  ;
+        } 
+    }
+
+    console.log(isValidMail)
+
+    if (isValidMail) {
+        messageValid = `Il seguente indirizzo mail: ${userEmail}, non può essere utilizzato, poichè già esistente.`;
+    } else{
+        messageValid = `Il seguente indirizzo mail: ${userEmail}, può essere utilizzato.`;
     }
     
+    console.log(messageValid)
    
 })
