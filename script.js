@@ -25,3 +25,6 @@ if (userPlay > cpuPlay){
 }
 
 console.log(message)
+
+// 4.generazione output
+target.innerHTML = message;
